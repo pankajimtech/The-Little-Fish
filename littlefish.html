@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>12 Page Book</title>
+    <style>
+        body {
+            font-family: serif;
+            background-color: #f0e6d2;
+            margin: 0;
+            padding: 0;
+            background-image:url(https://static.vecteezy.com/system/resources/previews/016/143/079/non_2x/underwater-landscape-ancient-city-temple-columns-vector.jpg);
+        }
+
+        .book {
+            width: 80%;
+            margin: 50px auto;
+            display: flex;
+            background-color: #fff8e1;
+            border: 1px solid #d2b48c;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+        }
+
+        .page {
+            width: 50%;
+            padding: 20px;
+           
+        }
+
+        .page:nth-child(even) {
+            display: none;
+        }
+
+        .buttons {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<h1 style="text-align:center;">The Little Fish</h1>
+    <div class="book">
+        <div class="page">
+            <h2>The Little Fish</h2>
+            <p>Written by Aditi K Chauhan</p>
+        </div>
+        <div class="page">
+            <h2>Page 1</h2>
+            <p>Once upon a time, there was a fish named Lina.</p>
+        </div>
+        <div class="page">
+            <h2>Page 2</h2>
+            <p>Lina loved swimming around rear the coral reefs.</p>
+        </div>
+        <div class="page">
+            <h2>Page 3</h2>
+            <p>Suddenly a squid came out of nowhere and squirted Lina!</p>
+        </div>
+        <div class="page">
+            <h2>Page 4</h2>
+            <p>Lina was terrified as she turned black by the squid.</p>
+        </div>
+        <div class="page">
+            <h2>Page 5</h2>
+            <p>Lina rushed to her dad, and she explained what happned.</p>
+        </div>
+        <div class="page">
+            <h2>Page 6</h2>
+            <p>Lina's dad said "Don't worry about", and it will go away.</p>
+        </div>
+        <div class="page">
+            <h2>Page 7</h2>
+            <p>Lina was shocked to why her dad just said "Don't worry about it".</p>
+        </div>
+        <div class="page">
+            <h2>Page 8</h2>
+            <p>Lina was covered black, and she was worried about herself.</p>
+        </div>
+        <div class="page">
+            <h2>Page 9</h2>
+            <p>Lina then thought to why her dad said it. Her dad always thinks good for her.</p>
+        </div>
+        <div class="page">
+            <h2>Page 10</h2>
+            <p>And so, Lina stopped worring about it, and had a happy day.</p>
+        </div>
+         <div class="page">
+            <h2>Page 11</h2>
+            <p>When Lina came back home, she was not covered in black anyone, she was lookling like her original self again!</p>
+        </div>
+         <div class="page">
+            <h2>Page 12</h2>
+            <p>Lina said "Dad! The black is gone!"</p>
+        </div>
+        <div class="page">
+            <h2>Quote</h2>
+            <p>"If you think about it, it will happed, and if you don't think about it, it will not happen.<b> Your life works on how you think it, not how others say it</b>" <br> - Aditi K Chauhan</p>
+        </div>
+        <div class="page">
+            <h2>Author</h2>
+            <p>Aditi K Chauhan</p>
+        </div>
+        <div class="page">
+            <h2>The End</h2>
+            <p>Lina lived happily ever after.</p>
+        </div>
+    </div>
+
+    <div class="buttons">
+        <button id="prevPage">Previous Page</button>
+        <button id="nextPage">Next Page</button>
+    </div>
+
+<br><br><br>
+<p style="margin-left:60%;">
+<img src="https://pngfre.com/wp-content/uploads/goldfish-poster.png" width="50px">
+</p>
+
+
+<!-- https://png.pngtree.com/png-vector/20241204/ourmid/pngtree-goldfish-with-big-eyes-png-image_14552322.png -->
+
+
+    <script>
+        let currentPage = 1;
+        const pages = document.querySelectorAll('.page');
+
+        function showPage(pageNumber) {
+            pages.forEach((page, index) => {
+                if (index + 1 === pageNumber || index + 1 === pageNumber + 1) {
+                    page.style.display = 'block';
+                } else {
+                    page.style.display = 'none';
+                }
+            });
+        }
+
+        document.getElementById('nextPage').addEventListener('click', () => {
+            if (currentPage < pages.length - 1) {
+                currentPage += 2;
+                showPage(currentPage);
+            }
+        });
+
+        document.getElementById('prevPage').addEventListener('click', () => {
+            if (currentPage > 1) {
+                currentPage -= 2;
+                showPage(currentPage);
+            }
+        });
+
+        showPage(currentPage);
+    </script>
+
+</body>
+</html>
